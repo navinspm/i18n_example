@@ -1,0 +1,11 @@
+malaiyalam:
+  products:
+    index:
+      title: "ലിസ്റിംഗ് പ്രോടുക്ട്സ് "
+      description: "സെലക്ട്‌  എനി  പ്രോഡക്റ്റ്  യു  ലൈക്‌ "
+
+  activerecord:
+    attributes:
+      product:
+        price: 	"പ്രൈസ് "
+        name: "നെയിം "

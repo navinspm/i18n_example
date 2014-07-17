@@ -1,0 +1,38 @@
+in view file where you want to link to localization  add link like this
+    
+    <%= link_to_unless_current "English", locale: "en" %>
+    <%= link_to_unless_current "தமிழ்", locale: "tamil" %>
+    <%= link_to_unless_current "മലൈയാളം ", locale: "malaiyalam" %>
+
+in your application_controller.rb
+
+     before_filter :set_locale
+
+  private
+  def set_locale
+  	I18n.locale = params[:locale] if params[:locale].present?  	 
+  end
+  def default_url_options(options = {})
+  	{locale: I18n.locale}
+  end 
+
+then add yml file in locales folder which language you want (two space indention is important)
+
+   tamil:
+  products:
+    index:
+      title: "பொருட்கள் வரிசை"
+      description: "உங்களுக்கு பிடித்த பொருளை தேர்ந்தெடுக்க"
+
+  activerecord:
+    attributes:
+      product:
+        price: 	"விலை"
+        name: "பெயர்"
+
+add t before any attribute or item which you want to translate
+
+   <h1><%= t ".title" %></h1>
+then it will changed automatically to your language
+
+you have to write yml file for each language

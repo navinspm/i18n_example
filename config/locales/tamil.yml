@@ -1,0 +1,11 @@
+tamil:
+  products:
+    index:
+      title: "பொருட்கள் வரிசை"
+      description: "உங்களுக்கு பிடித்த பொருளை தேர்ந்தெடுக்க"
+
+  activerecord:
+    attributes:
+      product:
+        price: 	"விலை"
+        name: "பெயர்"

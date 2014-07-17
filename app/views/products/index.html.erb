@@ -1,0 +1,33 @@
+<h1><%= t ".title" %></h1>
+<em><%= t ".description" %></em>
+
+    <% @products.each do |product| %>
+    <table>
+      <tbody>
+     <thead>
+    
+    </thead>
+      <tr>
+       <th><%= Product.human_attribute_name(:name) %>:</th>
+        <td><%= product.name %></td>
+       <th><%= Product.human_attribute_name(:price) %>:</th>
+          <td><%= number_to_currency(product.price) %></td>
+
+        <td><%= link_to 'Show', product %></td>
+        <td><%= link_to 'Edit', edit_product_path(product) %></td>
+        <td><%= link_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div id="language-selector">
+  Language:
+  <%= link_to_unless_current "English", locale: "en" %>
+    <%= link_to_unless_current "தமிழ்", locale: "tamil" %>
+    <%= link_to_unless_current "മലൈയാളം ", locale: "malaiyalam" %>
+    <%= csrf_meta_tag %>
+</div>
+
+<%= link_to 'New Product', new_product_path %>
